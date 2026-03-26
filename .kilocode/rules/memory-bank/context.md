@@ -24,6 +24,13 @@ Nuclear Paints Ltd is a fully-designed, production-ready Next.js website for a p
   - [x] Contact section with form + contact info cards
   - [x] Footer with full links, contact details, and copyright
   - [x] AuthModal (login/signup, Google OAuth UI, M-Pesa mention, show/hide password)
+- [x] **Google OAuth fully wired up with next-auth v5 (beta)**
+  - [x] `next-auth@beta` installed
+  - [x] `src/auth.ts` — NextAuth config with Google provider
+  - [x] `src/app/api/auth/[...nextauth]/route.ts` — API route handler
+  - [x] `src/actions/auth.ts` — `signInWithGoogle` server action
+  - [x] AuthModal Google button wired to `signInWithGoogle()`
+  - [x] `.env.local` created with placeholder vars (`GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `AUTH_SECRET`)
   - [x] Custom CSS animations (blob, fadeUp, colorShift, brushStroke, floatY, paintDrip)
   - [x] Glass-morphism utility class
 
@@ -43,6 +50,9 @@ Nuclear Paints Ltd is a fully-designed, production-ready Next.js website for a p
 | `src/components/sections/AboutSection.tsx` | About + director + why-us grid | ✅ Done |
 | `src/components/sections/ContactSection.tsx` | Contact info + message form | ✅ Done |
 | `src/components/forms/AuthModal.tsx` | Login/signup modal w/ Google OAuth UI | ✅ Done |
+| `src/auth.ts` | NextAuth v5 config (Google provider) | ✅ Done |
+| `src/app/api/auth/[...nextauth]/route.ts` | NextAuth API route handler | ✅ Done |
+| `src/actions/auth.ts` | Server action: signInWithGoogle | ✅ Done |
 
 ## Design System
 
@@ -66,3 +76,4 @@ Nuclear Paints Ltd is a fully-designed, production-ready Next.js website for a p
 |------|---------|
 | Initial | Template created with base setup |
 | 2026-03-26 | Full Nuclear Paints Ltd website built – all sections, animations, auth modal |
+| 2026-03-26 | Google OAuth implemented with next-auth v5 – button wired, API route created, .env.local added |

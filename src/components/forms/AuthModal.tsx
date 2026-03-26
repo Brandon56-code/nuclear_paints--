@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import NuclearLogo from "@/components/ui/NuclearLogo";
+import { signInWithGoogle } from "@/actions/auth";
 
 type AuthMode = "login" | "signup";
 
@@ -106,6 +107,7 @@ export default function AuthModal({ isOpen, initialMode, onClose }: AuthModalPro
           {/* Google button */}
           <button
             type="button"
+            onClick={() => signInWithGoogle()}
             className="w-full flex items-center justify-center gap-3 py-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-200 text-white font-medium text-sm mb-5"
           >
             {/* Google logo */}
