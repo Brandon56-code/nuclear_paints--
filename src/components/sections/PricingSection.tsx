@@ -1,48 +1,15 @@
-import Image from "next/image";
+import PaintCan from "@/components/ui/PaintCan";
+import PaintCanDisplay from "@/components/ui/PaintCanDisplay";
 
 const paintShowcase = [
-  {
-    // Rows of colourful paint tins on a shelf
-    src: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=600&q=80",
-    alt: "Rows of colourful paint tins on a shelf",
-    label: "Interior Premium",
-    accent: "from-yellow-400 to-orange-500",
-  },
-  {
-    // Fan of paint colour swatches
-    src: "https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&q=80",
-    alt: "Fan of colourful paint colour swatches",
-    label: "Color Range",
-    accent: "from-pink-500 to-purple-600",
-  },
-  {
-    // Open paint cans showing vibrant colour
-    src: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80",
-    alt: "Open paint cans showing vibrant colours",
-    label: "Exterior Weather Guard",
-    accent: "from-blue-400 to-cyan-500",
-  },
-  {
-    // Stack of industrial paint drums
-    src: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80",
-    alt: "Stack of industrial paint drums for bulk orders",
-    label: "Bulk / Trade",
-    accent: "from-green-400 to-emerald-600",
-  },
-  {
-    // Smooth glossy painted wall surface
-    src: "https://images.unsplash.com/photo-1615529162924-f8605388461d?w=600&q=80",
-    alt: "Smooth glossy painted wall surface",
-    label: "Premium Gloss Finish",
-    accent: "from-orange-400 to-red-500",
-  },
-  {
-    // White paint texture on a wall
-    src: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&q=80",
-    alt: "Smooth white wall filler texture",
-    label: "Wall Filler & Undercoat",
-    accent: "from-slate-400 to-slate-600",
-  },
+  { color: "#3b82f6", label: "Sky Blue",   accent: "from-blue-400 to-blue-600",       bg: "#1e3a5f" },
+  { color: "#22c55e", label: "Lime Green", accent: "from-green-400 to-emerald-600",    bg: "#052e16" },
+  { color: "#f59e0b", label: "Amber",      accent: "from-yellow-400 to-orange-500",    bg: "#422006" },
+  { color: "#ef4444", label: "Crimson",    accent: "from-red-400 to-red-600",          bg: "#1a0000" },
+  { color: "#8b5cf6", label: "Violet",     accent: "from-purple-400 to-purple-600",    bg: "#1e1b4b" },
+  { color: "#f8fafc", label: "Pure White", accent: "from-slate-300 to-slate-500",      bg: "#1e293b" },
+  { color: "#ec4899", label: "Rose",       accent: "from-pink-400 to-pink-600",        bg: "#2d0a1a" },
+  { color: "#06b6d4", label: "Cyan",       accent: "from-cyan-400 to-cyan-600",        bg: "#083344" },
 ];
 
 const pricingCategories = [
@@ -51,11 +18,13 @@ const pricingCategories = [
     icon: "🪣",
     color: "from-green-500 to-emerald-600",
     glowColor: "shadow-green-500/20",
-    // White wall filler texture — no people
-    image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=500&q=80",
-    imageAlt: "Smooth white wall filler texture close-up",
+    cans: [
+      { color: "#e2e8f0", label: "Filler" },
+      { color: "#f8fafc", label: "Primer" },
+    ],
+    bgFrom: "#052e16", bgTo: "#022c19",
     items: [
-      { name: "Wall Filler – Interior (25 kg)", price: "KSh 800", note: "Per bucket" },
+      { name: "Wall Filler – Interior (25 kg)", price: "KSh 800",   note: "Per bucket" },
       { name: "Wall Filler – Exterior (25 kg)", price: "KSh 1,400", note: "Per bucket" },
     ],
   },
@@ -65,12 +34,15 @@ const pricingCategories = [
     color: "from-yellow-400 to-orange-500",
     glowColor: "shadow-yellow-400/20",
     featured: true,
-    // Rows of colourful paint tins — no people
-    image: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=500&q=80",
-    imageAlt: "Rows of colourful premium paint tins on a shelf",
+    cans: [
+      { color: "#3b82f6", label: "Blue"  },
+      { color: "#eab308", label: "Gold"  },
+      { color: "#ef4444", label: "Red"   },
+    ],
+    bgFrom: "#431407", bgTo: "#1c0500",
     items: [
-      { name: "Premium Paint – 1 Litre", price: "KSh 800", note: "All finishes" },
-      { name: "Premium Paint – 4 Litres", price: "On Request", note: "Price varies by colour" },
+      { name: "Premium Paint – 1 Litre",   price: "KSh 800",    note: "All finishes" },
+      { name: "Premium Paint – 4 Litres",  price: "On Request", note: "Price varies by colour" },
       { name: "Premium Paint – 20 Litres", price: "On Request", note: "Price varies by colour" },
     ],
   },
@@ -79,13 +51,17 @@ const pricingCategories = [
     icon: "🏭",
     color: "from-blue-500 to-indigo-600",
     glowColor: "shadow-blue-500/20",
-    // Stack of industrial paint drums — no people
-    image: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=500&q=80",
-    imageAlt: "Stack of industrial paint drums for bulk trade orders",
+    cans: [
+      { color: "#1d4ed8", label: "Trade"  },
+      { color: "#475569", label: "Grey"   },
+      { color: "#1e293b", label: "Black"  },
+      { color: "#dc2626", label: "Red"    },
+    ],
+    bgFrom: "#0f172a", bgTo: "#020617",
     items: [
-      { name: "Standard 4 Litre Packs", price: "Available", note: "Across all product lines" },
-      { name: "90 Litre Bulk Orders", price: "On Request", note: "Trade & contractor pricing" },
-      { name: "Custom Mix Orders", price: "On Request", note: "Minimum order applies" },
+      { name: "Standard 4 Litre Packs",  price: "Available",  note: "Across all product lines" },
+      { name: "90 Litre Bulk Orders",    price: "On Request", note: "Trade & contractor pricing" },
+      { name: "Custom Mix Orders",       price: "On Request", note: "Minimum order applies" },
     ],
   },
 ];
@@ -119,30 +95,22 @@ export default function PricingSection() {
           </p>
         </div>
 
-        {/* ── Paint Showcase Gallery ── */}
+        {/* ── Paint Can Showcase ── */}
         <div className="mb-20">
-          <p className="text-center text-slate-500 text-xs font-semibold uppercase tracking-widest mb-6">
-            Our Paint Range
+          <p className="text-center text-slate-500 text-xs font-semibold uppercase tracking-widest mb-8">
+            Our Colour Range
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+          <div className="grid grid-cols-4 sm:grid-cols-8 gap-4 justify-items-center">
             {paintShowcase.map((item) => (
-              <div
-                key={item.label}
-                className="group relative rounded-2xl overflow-hidden aspect-square cursor-pointer"
-              >
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  fill
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 17vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                {/* Dark gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                {/* Colour accent bar */}
-                <div className={`absolute bottom-0 inset-x-0 h-1 bg-gradient-to-r ${item.accent}`} />
-                {/* Label */}
-                <p className="absolute bottom-3 inset-x-2 text-white text-xs font-bold text-center leading-tight drop-shadow">
+              <div key={item.label} className="flex flex-col items-center gap-2 group cursor-pointer">
+                <div
+                  className="rounded-2xl p-3 transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-1"
+                  style={{ background: `linear-gradient(160deg, ${item.bg}cc, ${item.bg})` }}
+                >
+                  <PaintCan color={item.color} label={item.label} size="sm" />
+                </div>
+                <div className={`h-1 w-12 rounded-full bg-gradient-to-r ${item.accent} opacity-60 group-hover:opacity-100 transition-opacity`} />
+                <p className="text-slate-500 text-xs font-semibold text-center group-hover:text-slate-300 transition-colors">
                   {item.label}
                 </p>
               </div>
@@ -165,20 +133,17 @@ export default function PricingSection() {
                 <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-yellow-400 to-orange-500 z-10" />
               )}
 
-              {/* Product image */}
-              <div className="relative h-44 w-full overflow-hidden">
-                <Image
-                  src={cat.image}
-                  alt={cat.imageAlt}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover"
+              {/* Paint cans display */}
+              <div className="h-44 w-full overflow-hidden">
+                <PaintCanDisplay
+                  cans={cat.cans}
+                  bgFrom={cat.bgFrom}
+                  bgTo={cat.bgTo}
+                  className="h-full"
                 />
-                {/* Gradient overlay that merges into the card header */}
-                <div className={`absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60`} />
-                {/* Category header sits on top of the image */}
-                <div className="absolute bottom-0 inset-x-0 p-4 flex items-end gap-3">
-                  <span className="text-3xl drop-shadow-lg">{cat.icon}</span>
+                {/* Category title overlay */}
+                <div className="relative -mt-12 px-4 pb-2 flex items-end gap-3 z-10">
+                  <span className="text-2xl drop-shadow-lg">{cat.icon}</span>
                   <div>
                     <h3 className="text-white font-black text-xl drop-shadow">{cat.title}</h3>
                     {cat.featured && (
@@ -201,9 +166,7 @@ export default function PricingSection() {
                       <p className="text-slate-200 font-medium text-sm">{item.name}</p>
                       <p className="text-slate-500 text-xs mt-0.5">{item.note}</p>
                     </div>
-                    <span
-                      className={`text-sm font-black whitespace-nowrap bg-gradient-to-r ${cat.color} bg-clip-text text-transparent`}
-                    >
+                    <span className={`text-sm font-black whitespace-nowrap bg-gradient-to-r ${cat.color} bg-clip-text text-transparent`}>
                       {item.price}
                     </span>
                   </div>

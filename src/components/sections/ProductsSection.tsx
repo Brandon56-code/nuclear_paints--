@@ -1,10 +1,13 @@
-import Image from "next/image";
+import PaintCanDisplay from "@/components/ui/PaintCanDisplay";
 
 const products = [
   {
-    // Rows of colourful paint tins on a shelf — no people
-    image: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=600&q=80",
-    imageAlt: "Rows of colourful paint tins on a shelf",
+    cans: [
+      { color: "#3b82f6", label: "Sky Blue" },
+      { color: "#f8fafc", label: "White" },
+      { color: "#a78bfa", label: "Lilac" },
+    ],
+    bgFrom: "#1e3a5f", bgTo: "#0f2340",
     title: "Interior Decorative Paints",
     desc: "Elegant, washable finishes for living rooms, bedrooms, and hallways. Rich pigments for vibrant, long-lasting colour.",
     tag: "Most Popular",
@@ -12,9 +15,12 @@ const products = [
     accent: "group-hover:shadow-blue-500/20",
   },
   {
-    // Close-up of open paint cans showing colour — no people
-    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80",
-    imageAlt: "Open paint cans showing vibrant colours",
+    cans: [
+      { color: "#ea580c", label: "Terracotta" },
+      { color: "#d97706", label: "Amber" },
+      { color: "#92400e", label: "Rust" },
+    ],
+    bgFrom: "#431407", bgTo: "#1c0a03",
     title: "Exterior Weather-Resistant",
     desc: "Formulated to withstand Nairobi's rain, UV rays, and humidity. Protects and beautifies your exterior walls for years.",
     tag: "Best Seller",
@@ -22,9 +28,11 @@ const products = [
     accent: "group-hover:shadow-orange-500/20",
   },
   {
-    // Smooth glossy painted wall surface close-up — no people
-    image: "https://images.unsplash.com/photo-1615529162924-f8605388461d?w=600&q=80",
-    imageAlt: "Smooth glossy painted wall surface close-up",
+    cans: [
+      { color: "#eab308", label: "Gold" },
+      { color: "#fef3c7", label: "Cream" },
+    ],
+    bgFrom: "#422006", bgTo: "#1c0f00",
     title: "Premium Finishes",
     desc: "Gloss, satin, and matte options for sophisticated, professional-grade results on any surface.",
     tag: "Premium",
@@ -32,9 +40,11 @@ const products = [
     accent: "group-hover:shadow-yellow-500/20",
   },
   {
-    // White paint texture close-up on a wall — no people
-    image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&q=80",
-    imageAlt: "Smooth white wall filler texture close-up",
+    cans: [
+      { color: "#e2e8f0", label: "Filler" },
+      { color: "#f8fafc", label: "Primer" },
+    ],
+    bgFrom: "#1e293b", bgTo: "#0f172a",
     title: "Fillers & Undercoats",
     desc: "Wall filler (interior & exterior) and primer undercoats that ensure paint adhesion and a flawless smooth surface.",
     tag: "Essential",
@@ -42,9 +52,12 @@ const products = [
     accent: "group-hover:shadow-green-500/20",
   },
   {
-    // Stack of industrial paint drums / metal cans — no people
-    image: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80",
-    imageAlt: "Stack of industrial paint drums",
+    cans: [
+      { color: "#ef4444", label: "Industrial" },
+      { color: "#475569", label: "Grey" },
+      { color: "#1e293b", label: "Black" },
+    ],
+    bgFrom: "#1a0000", bgTo: "#0a0000",
     title: "Industrial Coatings",
     desc: "Heavy-duty protective coatings for warehouses, factories, and industrial equipment. Chemical and abrasion resistant.",
     tag: "Industrial",
@@ -52,9 +65,13 @@ const products = [
     accent: "group-hover:shadow-red-500/20",
   },
   {
-    // Fan of paint colour swatches spread out — no people
-    image: "https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&q=80",
-    imageAlt: "Fan of colourful paint swatches spread out",
+    cans: [
+      { color: "#ec4899", label: "Rose" },
+      { color: "#8b5cf6", label: "Violet" },
+      { color: "#06b6d4", label: "Cyan" },
+      { color: "#22c55e", label: "Lime" },
+    ],
+    bgFrom: "#1e1b4b", bgTo: "#0f0a2e",
     title: "Custom Color Mixing",
     desc: "Bring your vision to life! We mix any shade to your specification — perfect for designers and architects.",
     tag: "Bespoke",
@@ -95,22 +112,18 @@ export default function ProductsSection() {
               className={`group relative glass rounded-2xl overflow-hidden hover:border-yellow-400/40 hover:shadow-xl ${p.accent} transition-all duration-400 cursor-pointer flex flex-col`}
             >
               {/* Tag */}
-              <span
-                className={`absolute top-3 right-3 z-10 ${p.tagColor} text-white text-xs font-bold px-2.5 py-1 rounded-full shadow`}
-              >
+              <span className={`absolute top-3 right-3 z-10 ${p.tagColor} text-white text-xs font-bold px-2.5 py-1 rounded-full shadow`}>
                 {p.tag}
               </span>
 
-              {/* Product image */}
-              <div className="relative h-48 w-full overflow-hidden">
-                <Image
-                  src={p.image}
-                  alt={p.imageAlt}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+              {/* Paint cans display */}
+              <div className="h-48 w-full overflow-hidden transition-transform duration-500 group-hover:scale-105">
+                <PaintCanDisplay
+                  cans={p.cans}
+                  bgFrom={p.bgFrom}
+                  bgTo={p.bgTo}
+                  className="h-full"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
               </div>
 
               {/* Content */}
@@ -123,12 +136,7 @@ export default function ProductsSection() {
                 {/* Arrow */}
                 <div className="mt-4 flex items-center gap-1 text-yellow-400 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   Learn more
-                  <svg
-                    className="w-4 h-4 group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
+                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </div>
