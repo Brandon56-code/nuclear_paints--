@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import NuclearLogo from "@/components/ui/NuclearLogo";
 
 export default function Navbar({
   onOpenAuth,
@@ -31,23 +32,11 @@ export default function Navbar({
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-3 group">
-          <div className="relative w-10 h-10">
-            {/* Paint palette icon */}
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-              <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 text-white" aria-hidden>
-                <path
-                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c1.1 0 2-.9 2-2 0-.53-.2-1.01-.52-1.38-.31-.36-.49-.83-.49-1.32 0-1.1.9-2 2-2h2.36c3.09 0 5.65-2.56 5.65-5.65C22.99 6.04 17.98 2 12 2z"
-                  fill="currentColor"
-                  opacity="0.9"
-                />
-                <circle cx="6.5" cy="11.5" r="1.5" fill="#0f172a" />
-                <circle cx="9.5" cy="7.5" r="1.5" fill="#0f172a" />
-                <circle cx="14.5" cy="7.5" r="1.5" fill="#0f172a" />
-                <circle cx="17.5" cy="11.5" r="1.5" fill="#0f172a" />
-              </svg>
-            </div>
-          </div>
+        <a href="#" className="flex items-center gap-2 group">
+          <NuclearLogo
+            size={44}
+            className="group-hover:scale-110 transition-transform duration-300 drop-shadow-lg"
+          />
           <div>
             <span className="text-white font-black text-lg leading-none">Nuclear</span>
             <span className="block text-yellow-400 font-bold text-xs tracking-widest uppercase leading-none">

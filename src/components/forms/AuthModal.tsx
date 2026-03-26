@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import NuclearLogo from "@/components/ui/NuclearLogo";
 
 type AuthMode = "login" | "signup";
 
@@ -67,10 +68,8 @@ export default function AuthModal({ isOpen, initialMode, onClose }: AuthModalPro
 
         <div className="p-8">
           {/* Brand mark */}
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-9 h-9 rounded-full bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500 flex items-center justify-center text-white font-black text-sm">
-              N
-            </div>
+          <div className="flex items-center gap-2 mb-6">
+            <NuclearLogo size={40} />
             <div>
               <p className="text-white font-black text-sm">Nuclear Paints Ltd</p>
               <p className="text-slate-500 text-xs">Your trusted paint partner</p>
