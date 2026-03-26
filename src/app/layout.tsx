@@ -13,8 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Next.js Template",
-  description: "A minimal Next.js starter template",
+  title: "Nuclear Paints Ltd – Color That Defines Spaces",
+  description:
+    "Nuclear Paints Ltd is a trusted paint manufacturing and supply company in Ruai, Nairobi. High-quality, durable, and vibrant paint solutions for residential, commercial, and industrial use.",
+  keywords: ["paint", "nuclear paints", "Nairobi", "Ruai", "interior paint", "exterior paint", "industrial coatings"],
 };
 
 export default function RootLayout({

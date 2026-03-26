@@ -1,10 +1,10 @@
-# Active Context: Next.js Starter Template
+# Active Context: Nuclear Paints Ltd Website
 
 ## Current State
 
-**Template Status**: ✅ Ready for development
+**Project Status**: ✅ Full website built and live
 
-The template is a clean Next.js 16 starter with TypeScript and Tailwind CSS 4. It's ready for AI-assisted expansion to build any type of application.
+Nuclear Paints Ltd is a fully-designed, production-ready Next.js website for a paint manufacturing and supply company based in Ruai, Nairobi County. All major sections, animations, and the auth modal are implemented.
 
 ## Recently Completed
 
@@ -14,74 +14,55 @@ The template is a clean Next.js 16 starter with TypeScript and Tailwind CSS 4. I
 - [x] ESLint configuration
 - [x] Memory bank documentation
 - [x] Recipe system for common features
+- [x] **Nuclear Paints Ltd – full website implementation**
+  - [x] Animated hero with canvas paint-splash background (requestAnimationFrame blobs)
+  - [x] Sticky glass-morphism Navbar with mobile hamburger menu
+  - [x] Products & Services section (6 product cards)
+  - [x] Pricing section (Fillers / Premium Paints / Bulk Trade)
+  - [x] Customer Dashboard Features showcase with mock dashboard UI
+  - [x] About section with director card and "Why Choose Us" grid
+  - [x] Contact section with form + contact info cards
+  - [x] Footer with full links, contact details, and copyright
+  - [x] AuthModal (login/signup, Google OAuth UI, M-Pesa mention, show/hide password)
+  - [x] Custom CSS animations (blob, fadeUp, colorShift, brushStroke, floatY, paintDrip)
+  - [x] Glass-morphism utility class
 
 ## Current Structure
 
 | File/Directory | Purpose | Status |
 |----------------|---------|--------|
-| `src/app/page.tsx` | Home page | ✅ Ready |
-| `src/app/layout.tsx` | Root layout | ✅ Ready |
-| `src/app/globals.css` | Global styles | ✅ Ready |
-| `.kilocode/` | AI context & recipes | ✅ Ready |
+| `src/app/page.tsx` | Home page (orchestrates all sections) | ✅ Done |
+| `src/app/layout.tsx` | Root layout + Nuclear Paints metadata | ✅ Done |
+| `src/app/globals.css` | Tailwind + custom paint animations | ✅ Done |
+| `src/components/layout/Navbar.tsx` | Sticky navbar with auth buttons | ✅ Done |
+| `src/components/layout/Footer.tsx` | Full footer | ✅ Done |
+| `src/components/sections/HeroSection.tsx` | Animated canvas hero | ✅ Done |
+| `src/components/sections/ProductsSection.tsx` | 6 product cards | ✅ Done |
+| `src/components/sections/PricingSection.tsx` | Pricing by category | ✅ Done |
+| `src/components/sections/DashboardFeaturesSection.tsx` | Dashboard feature list + mock UI | ✅ Done |
+| `src/components/sections/AboutSection.tsx` | About + director + why-us grid | ✅ Done |
+| `src/components/sections/ContactSection.tsx` | Contact info + message form | ✅ Done |
+| `src/components/forms/AuthModal.tsx` | Login/signup modal w/ Google OAuth UI | ✅ Done |
 
-## Current Focus
+## Design System
 
-The template is ready. Next steps depend on user requirements:
+- **Colour palette**: slate-950/900 backgrounds · yellow-400/orange-500 accents · blue-400/red-400 secondary
+- **Typography**: Geist Sans (headings black, body regular) · tracking-widest for labels
+- **Glass cards**: `backdrop-blur-16px` + `rgba(255,255,255,0.07)` + border `rgba(255,255,255,0.15)`
+- **Animations**: blob drift, canvas radial-gradient paint splashes, fadeUp, floatY, colorShift gradient
+- **Layout**: max-w-7xl · responsive grid · mobile hamburger menu
 
-1. What type of application to build
-2. What features are needed
-3. Design/branding preferences
+## Business Info Captured
 
-## Quick Start Guide
-
-### To add a new page:
-
-Create a file at `src/app/[route]/page.tsx`:
-```tsx
-export default function NewPage() {
-  return <div>New page content</div>;
-}
-```
-
-### To add components:
-
-Create `src/components/` directory and add components:
-```tsx
-// src/components/ui/Button.tsx
-export function Button({ children }: { children: React.ReactNode }) {
-  return <button className="px-4 py-2 bg-blue-600 text-white rounded">{children}</button>;
-}
-```
-
-### To add a database:
-
-Follow `.kilocode/recipes/add-database.md`
-
-### To add API routes:
-
-Create `src/app/api/[route]/route.ts`:
-```tsx
-import { NextResponse } from "next/server";
-
-export async function GET() {
-  return NextResponse.json({ message: "Hello" });
-}
-```
-
-## Available Recipes
-
-| Recipe | File | Use Case |
-|--------|------|----------|
-| Add Database | `.kilocode/recipes/add-database.md` | Data persistence with Drizzle + SQLite |
-
-## Pending Improvements
-
-- [ ] Add more recipes (auth, email, etc.)
-- [ ] Add example components
-- [ ] Add testing setup recipe
+- **Director**: Ndirangu Wangondu
+- **Location**: Ruai, Nairobi County · Eastern Bypass, Near Afro Sayari
+- **Phone**: +254 722 115 957 / +254 750 809 700
+- **Email**: nucpaints.ltd@gmail.com
+- **P.O. Box**: 32001-0000, Kenya
 
 ## Session History
 
 | Date | Changes |
 |------|---------|
 | Initial | Template created with base setup |
+| 2026-03-26 | Full Nuclear Paints Ltd website built – all sections, animations, auth modal |
