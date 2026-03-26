@@ -2,8 +2,9 @@ import Image from "next/image";
 
 const products = [
   {
-    image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&q=80",
-    imageAlt: "Painting interior walls with premium white paint",
+    // Rows of colourful paint tins on a shelf — no people
+    image: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=600&q=80",
+    imageAlt: "Rows of colourful paint tins on a shelf",
     title: "Interior Decorative Paints",
     desc: "Elegant, washable finishes for living rooms, bedrooms, and hallways. Rich pigments for vibrant, long-lasting colour.",
     tag: "Most Popular",
@@ -11,8 +12,9 @@ const products = [
     accent: "group-hover:shadow-blue-500/20",
   },
   {
-    image: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&q=80",
-    imageAlt: "Exterior house being painted bright white",
+    // Close-up of open paint cans showing colour — no people
+    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80",
+    imageAlt: "Open paint cans showing vibrant colours",
     title: "Exterior Weather-Resistant",
     desc: "Formulated to withstand Nairobi's rain, UV rays, and humidity. Protects and beautifies your exterior walls for years.",
     tag: "Best Seller",
@@ -20,8 +22,9 @@ const products = [
     accent: "group-hover:shadow-orange-500/20",
   },
   {
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
-    imageAlt: "Smooth premium gloss finish on a wall",
+    // Smooth glossy painted wall surface close-up — no people
+    image: "https://images.unsplash.com/photo-1615529162924-f8605388461d?w=600&q=80",
+    imageAlt: "Smooth glossy painted wall surface close-up",
     title: "Premium Finishes",
     desc: "Gloss, satin, and matte options for sophisticated, professional-grade results on any surface.",
     tag: "Premium",
@@ -29,8 +32,9 @@ const products = [
     accent: "group-hover:shadow-yellow-500/20",
   },
   {
-    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80",
-    imageAlt: "Painter applying wall filler to a smooth surface",
+    // White paint texture close-up on a wall — no people
+    image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&q=80",
+    imageAlt: "Smooth white wall filler texture close-up",
     title: "Fillers & Undercoats",
     desc: "Wall filler (interior & exterior) and primer undercoats that ensure paint adhesion and a flawless smooth surface.",
     tag: "Essential",
@@ -38,8 +42,9 @@ const products = [
     accent: "group-hover:shadow-green-500/20",
   },
   {
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80",
-    imageAlt: "Industrial paint buckets stacked on a work site",
+    // Stack of industrial paint drums / metal cans — no people
+    image: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80",
+    imageAlt: "Stack of industrial paint drums",
     title: "Industrial Coatings",
     desc: "Heavy-duty protective coatings for warehouses, factories, and industrial equipment. Chemical and abrasion resistant.",
     tag: "Industrial",
@@ -47,8 +52,9 @@ const products = [
     accent: "group-hover:shadow-red-500/20",
   },
   {
-    image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=600&q=80",
-    imageAlt: "Colourful paint swatches spread out for custom mixing",
+    // Fan of paint colour swatches spread out — no people
+    image: "https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&q=80",
+    imageAlt: "Fan of colourful paint swatches spread out",
     title: "Custom Color Mixing",
     desc: "Bring your vision to life! We mix any shade to your specification — perfect for designers and architects.",
     tag: "Bespoke",

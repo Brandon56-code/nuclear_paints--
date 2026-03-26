@@ -2,38 +2,44 @@ import Image from "next/image";
 
 const paintShowcase = [
   {
-    src: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&q=80",
-    alt: "Interior wall being painted with white premium paint",
+    // Rows of colourful paint tins on a shelf
+    src: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=600&q=80",
+    alt: "Rows of colourful paint tins on a shelf",
     label: "Interior Premium",
     accent: "from-yellow-400 to-orange-500",
   },
   {
-    src: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=600&q=80",
-    alt: "Colourful paint swatches and chips spread out",
+    // Fan of paint colour swatches
+    src: "https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&q=80",
+    alt: "Fan of colourful paint colour swatches",
     label: "Color Range",
     accent: "from-pink-500 to-purple-600",
   },
   {
-    src: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&q=80",
-    alt: "Exterior house being painted bright white",
+    // Open paint cans showing vibrant colour
+    src: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80",
+    alt: "Open paint cans showing vibrant colours",
     label: "Exterior Weather Guard",
     accent: "from-blue-400 to-cyan-500",
   },
   {
-    src: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80",
-    alt: "Paint buckets and rollers on a construction site",
+    // Stack of industrial paint drums
+    src: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80",
+    alt: "Stack of industrial paint drums for bulk orders",
     label: "Bulk / Trade",
     accent: "from-green-400 to-emerald-600",
   },
   {
-    src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
-    alt: "Premium gloss finish on a wall",
+    // Smooth glossy painted wall surface
+    src: "https://images.unsplash.com/photo-1615529162924-f8605388461d?w=600&q=80",
+    alt: "Smooth glossy painted wall surface",
     label: "Premium Gloss Finish",
     accent: "from-orange-400 to-red-500",
   },
   {
-    src: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80",
-    alt: "Painter applying smooth filler coat to a wall",
+    // White paint texture on a wall
+    src: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&q=80",
+    alt: "Smooth white wall filler texture",
     label: "Wall Filler & Undercoat",
     accent: "from-slate-400 to-slate-600",
   },
@@ -45,8 +51,9 @@ const pricingCategories = [
     icon: "🪣",
     color: "from-green-500 to-emerald-600",
     glowColor: "shadow-green-500/20",
-    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=500&q=80",
-    imageAlt: "Wall filler application",
+    // White wall filler texture — no people
+    image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=500&q=80",
+    imageAlt: "Smooth white wall filler texture close-up",
     items: [
       { name: "Wall Filler – Interior (25 kg)", price: "KSh 800", note: "Per bucket" },
       { name: "Wall Filler – Exterior (25 kg)", price: "KSh 1,400", note: "Per bucket" },
@@ -58,8 +65,9 @@ const pricingCategories = [
     color: "from-yellow-400 to-orange-500",
     glowColor: "shadow-yellow-400/20",
     featured: true,
-    image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=500&q=80",
-    imageAlt: "Premium interior paint being applied",
+    // Rows of colourful paint tins — no people
+    image: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=500&q=80",
+    imageAlt: "Rows of colourful premium paint tins on a shelf",
     items: [
       { name: "Premium Paint – 1 Litre", price: "KSh 800", note: "All finishes" },
       { name: "Premium Paint – 4 Litres", price: "On Request", note: "Price varies by colour" },
@@ -71,8 +79,9 @@ const pricingCategories = [
     icon: "🏭",
     color: "from-blue-500 to-indigo-600",
     glowColor: "shadow-blue-500/20",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&q=80",
-    imageAlt: "Bulk paint buckets for trade orders",
+    // Stack of industrial paint drums — no people
+    image: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=500&q=80",
+    imageAlt: "Stack of industrial paint drums for bulk trade orders",
     items: [
       { name: "Standard 4 Litre Packs", price: "Available", note: "Across all product lines" },
       { name: "90 Litre Bulk Orders", price: "On Request", note: "Trade & contractor pricing" },
